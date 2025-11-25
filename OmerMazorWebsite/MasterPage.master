@@ -5,17 +5,28 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
-    
+<body style="background-color: lightblue">
+    <table align="center" border="2" style="width: 100%;">
+        <tr style="height:10%">
+            <th>
+                <h1>Coolest Website Ever</h1>
+            </th>
+        </tr>
+        <tr style="height:20%">
+            <td align="center">
+                <a href="orders.aspx"><img src="images/order.png" /></a>
+                <a href="Login.aspx"><img src="images/LogIn.png" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

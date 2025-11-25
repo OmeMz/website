@@ -3,15 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table align="center" border="2" style="width: 100%;">
-    <tr>
-        <th align="center"><h1>Menu</h1></th>
+
+
+        <table align="center" border="2" style="width: 100%;">
+    <tr style="height: 60px">
+        <th align="center" colspan="2"><h1>Menu</h1></th>
     </tr>
-</table>
-<table border="1" style="width: 100%; height: 600px">
-    <tr style="height: 80">
-        <th>drinks</th>
-        <th>food</th>
+
+    <tr style="height: 80px">
+        <th><h1>drinks</h1></th>
+        <th><h1>food</h1></th>
     </tr>
     <tr>
         <td align="center"><img src="images/dhwoiahfoias.png" width="850" height="350" /></td>
