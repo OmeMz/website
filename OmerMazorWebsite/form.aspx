@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
 <form name="example" method="get" action="html_page13.html">
+    
     <div class="name">
     First name: <input type="text" name="firstname"><br />
     Surname: <input type="text" name="lastname"><br />
@@ -20,10 +21,6 @@
     <input type="radio" id="WB" name="fav_beer" value="Wheat Beer">
     <label for="WB">Wheat Beer</label>
 
-    <h2>Most Hated Beer?</h2>
-    <input type="radio" id="NST" name="MHB" value="None" />
-    <label for="NST">No such thing</label><br />
-
     <h2>Do you drink Whiskey?</h2>
     <input type="radio" id="whiskeyYes1" name="drinkWhiskey" value="Yes" />
     <label for="whiskeyYes1">Yes</label>
@@ -35,19 +32,20 @@
     <label for="baconYes">Yes</label>
     <input type="radio" id="baconNo" name="eatBacon" value="No" />
     <label for="baconNo">No</label><br />
-</form>
+</form>  
 </div>
 
 <style>
     .page{
         background-image: url('<%= ResolveUrl("~/images/background.jpg") %>');
         background-size: cover;
-        background-position: center;
+        background-position: center; 
         background-repeat: no-repeat;
         display: flex;
         justify-content: center;
         width: 100%;
-        height: 100vh;
+        height: 90vh;
+        align-items: center;
         
     }
 
@@ -58,6 +56,7 @@
         border-radius: 30px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
         text-align: center;
+        height: 90%;
     }
 
     form .name{
