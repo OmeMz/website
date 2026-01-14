@@ -15,12 +15,12 @@
         <th><h1>food</h1></th>
     </tr>
     <tr>
-        <td align="center"><img src="images/dhwoiahfoias.png" width="850" height="350" /></td>
-        <td align="center"><img src="images/fish.png" width="850" height="350"/></td>
+        <td align="center"><img src="images/dhwoiahfoias.png" width="80%" height="30%" /></td>
+        <td align="center"><img src="images/fish.png" width="80%" height="30%"/></td>
     </tr>
     <tr>
-        <td align="center"><a href="whiskey.aspx"><img src="images/whiskey.png" width="850" height="350" /></a></td>
-        <td align="center"><img src="images/steak.png" width="850" height="350"/></td>
+        <td align="center"><a href="whiskey.aspx"><img src="images/whiskey.png" width="80%" height="30%" /></a></td>
+        <td align="center"><img src="images/steak.png" width="80%" height="30%"/></td>
     </tr>
 </table>
 </asp:Content>

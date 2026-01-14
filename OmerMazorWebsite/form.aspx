@@ -25,16 +25,16 @@
     <label for="NST">No such thing</label><br />
 
     <h2>Do you drink Whiskey?</h2>
-    <input type="radio" id="yes" name="drinkWhiskey" value="Yes" />
-    <label for="whiskeYes1">Yes</label>
-    <input type="radio" id="yes2" name="drinkWhiskey" value="Yes" />
+    <input type="radio" id="whiskeyYes1" name="drinkWhiskey" value="Yes" />
+    <label for="whiskeyYes1">Yes</label>
+    <input type="radio" id="whiskeyYes2" name="drinkWhiskey" value="Yes" />
     <label for="whiskeyYes2">Yes</label><br />
     
     <h2>Do you eat bacon?</h2>
-    <input type="radio" id="yes" name="eatBacon" value="Yes" />
-    <label for="baconYes1">Yes</label>
-    <input type="radio" id="yes2" name="eatBacon" value="Yes" />
-    <label for="baconYes2">Yes</label><br /
+    <input type="radio" id="baconYes" name="eatBacon" value="Yes" />
+    <label for="baconYes">Yes</label>
+    <input type="radio" id="baconNo" name="eatBacon" value="No" />
+    <label for="baconNo">No</label><br />
 </form>
 </div>
 
