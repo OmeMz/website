@@ -5,10 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class form : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
+public partial class form : System.Web.UI.Page {
 
+    public string name;
+
+    protected void Page_Load(object sender, EventArgs e){
+        if(IsPostBack){
+            string firstname = Request.Form["firstname"];
+            string surname = Request.Form["surname"];
+            name = firstname + " " + surname;
+
+        }
     }
 }

@@ -5,14 +5,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
-<form name="example" method="get" action="html_page13.html">
+<form name="example" method="post" action="">
     
+    <!-- Register Title -->
+    <h1 class="form-title">Register</h1>
+
+    <div class="form-content">
+    <!-- Name -->
     <div class="name">
     First name: <input type="text" name="firstname"><br />
-    Surname: <input type="text" name="lastname"><br />
+    Surname: <input type="text" name="surname"><br />
     Middle name (Optional): <input type="text" name="midname"><br />
     </div>
 
+    <!-- Preferences -->
     <h2>Fav Beer?</h2>
     <input type="radio" id="PA" name="fav_beer" value="Pale Ale">
     <label for="PA">Pale Ale</label>
@@ -32,9 +38,35 @@
     <label for="baconYes">Yes</label>
     <input type="radio" id="baconNo" name="eatBacon" value="No" />
     <label for="baconNo">No</label><br />
+
+    <!-- Age group selection -->
+    <h2>Select your age group</h2>
+    <select name="age" id="age">
+        <option value="0">Select Age Group</option>
+        <option value="16">16-17</option>
+        <option value="18">18-24</option>
+        <option value="25">25-40</option>
+    </select><br />
+    </div>
+    <!-- End of form -->
+    <input class="submit" id="Submit" type="submit" value="Send" />
 </form>  
 </div>
 
+<%-- Results --%>
+<!--
+    ████████████████████████████████████████████
+    █████FIX ERROR: RESULTS NOT SHOWING█████████
+    ████████████████████████████████████████████
+    ██PRESSING SUBMIT: RELOADS PAGE AND ANSWERS█
+    ████████AREN'T SHOWING AT THE BOTTON████████
+    ████████████████████████████████████████████
+    -->
+<div class="results">
+    <%= name %>
+</div>
+
+<!-- CSS -->
 <style>
     .page{
         background-image: url('<%= ResolveUrl("~/images/background.jpg") %>');
@@ -49,6 +81,10 @@
         
     }
 
+    .form-content{
+        flex: 1;
+    }
+
     form{
         background-color: rgba(0, 0, 0, 0.67);
         color: white;
@@ -56,11 +92,33 @@
         border-radius: 30px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 1.5);
         text-align: center;
-        height: 90%;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    form select{
+        padding: 5px;
+        text-align: center;
     }
 
     form .name{
         text-align: left;
+    }
+
+    .form-title{
+        margin-top: 0;
+
+    }
+
+    .submit{
+        margin-top: auto;
+        margin-top: 5%;
+        width: 20%;
+
     }
 
 
