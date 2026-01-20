@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
-<form name="example" method="post" action="">
+<form name="example" method="post" runat="server">
     
     <!-- Register Title -->
     <h1 class="form-title">Register</h1>
@@ -16,6 +16,13 @@
     First name: <input type="text" name="firstname"><br />
     Surname: <input type="text" name="surname"><br />
     Middle name (Optional): <input type="text" name="midname"><br />
+    </div>
+
+    <!-- Email and pass -->
+     <h2>Enter E-Mail and create a password</h2>
+    <div class="login-info">
+    Email: <input type="text" name="email" /><br />
+    Password: <input type="password" name="pass" /><br />
     </div>
 
     <!-- Preferences -->
