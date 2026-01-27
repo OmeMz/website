@@ -61,14 +61,6 @@
 </div>
 
 <%-- Results --%>
-<!--
-    ████████████████████████████████████████████
-    █████FIX ERROR: RESULTS NOT SHOWING█████████
-    ████████████████████████████████████████████
-    ██PRESSING SUBMIT: RELOADS PAGE AND ANSWERS█
-    ████████AREN'T SHOWING AT THE BOTTON████████
-    ████████████████████████████████████████████
-    -->
 <div class="results">
     <%= name %>
 </div>
