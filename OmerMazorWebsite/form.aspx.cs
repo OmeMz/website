@@ -11,7 +11,8 @@ public partial class form : System.Web.UI.Page {
     public string name = "";
 
     protected void Page_Load(object sender, EventArgs e){
-        if(IsPostBack){
+        if (IsPostBack)
+        {
             string firstname = Request.Form["firstname"];
             string surname = Request.Form["surname"];
             name = firstname + " " + surname;
@@ -24,7 +25,7 @@ public partial class form : System.Web.UI.Page {
                 "N'" + firstname + "'," +
                 "N'" + surname + "'," +
                 age + "," +
-                "N'" + last + "'" +
+                "N'"  + "'" +
                 ")";
 
         }
