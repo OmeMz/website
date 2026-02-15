@@ -62,7 +62,7 @@
 
 <%-- Results --%>
 <div class="results">
-    <%= name %>
+    <%= str %>
 </div>
 
 <!-- CSS -->
