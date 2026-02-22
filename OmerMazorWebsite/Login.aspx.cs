@@ -10,15 +10,13 @@ public partial class Login : System.Web.UI.Page
     public string strResult;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (IsPostBack)
-        {
+        if(IsPostBack){
             string email = Request.Form["email"];
             string password = Request.Form["pass"];
 
-            if (email.Equals("manager@gmail.com") && password.Equals("111"))
+            if(email.Equals("manager@gmail.com") && password.Equals("111")){
                 Response.Redirect("manager.aspx");
-            else
-            {
+            }else{
                 string sqlselect =
                     "Select * from tUsers " +
                     " where email = N'" + email + "' and " +
@@ -26,14 +24,11 @@ public partial class Login : System.Web.UI.Page
 
                 bool isExists = MyAdoHelper.IsExist(sqlselect);
 
-                if (isExists)
-                {
+                if(isExists){
                     Response.Redirect("home.aspx");
-                }
-                else
-                {
-                    strResult = "משתמש לא קיים";
-                }
+                }else{
+                    strResult = "Wrong email or password!"; 
+				}
             }
         }
     }

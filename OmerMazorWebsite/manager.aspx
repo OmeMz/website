@@ -4,21 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="page">
-        <div class="manager-box">
+        <form class="manager-box" runat="server">
             <h1>Search Users</h1>
             <div class="row">
-                <label>First name: </label>
-                <input type="text" name="firstname" /><br />
-            </div>
-            <div class="row">
-                <label>Last name: </label>
-                <input type="text" name="lastname" /><br />
+                <label>Name: </label>
+                <input type="text" name="name" /><br />
             </div>
 
+
             <div class="row">
-               <input class="btn" type="submit" value="send"/><br />
+               <input class="btn" type="submit" value="Send"/><br />
             </div>
-        </div>
+            <%=st%>
+        </form>
     </div>
     
 <style>
