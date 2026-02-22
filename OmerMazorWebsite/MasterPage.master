@@ -24,7 +24,7 @@
                     <a href="Login.aspx">Log In</a>
                 </div>
                 <div class="register-button">
-                    <a href="form.aspx">Register</a>
+                    <a href="register.aspx">Register</a>
                 </div>
             </td>
         </tr>

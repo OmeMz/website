@@ -1,14 +1,61 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class register : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
+public partial class register : System.Web.UI.Page {
 
+    public string str = "";
+
+    protected void Page_Load(object sender, EventArgs e){
+        if (IsPostBack)
+        {
+            string firstname = Request.Form["firstname"];
+            string surname = Request.Form["surname"];
+            string middleName = Request.Form["midname"];
+            string drinkWhiskey = Request.Form["drinkWhiskey"];
+            string age = Request.Form["age"];
+            string favBeer = Request.Form["fav_beer"];
+            string eatBacon = Request.Form["eatBacon"];
+            string email = Request.Form["email"];
+            string password = Request.Form["pass"];
+
+            //האם מייל תפוס?
+            string sqlselect =
+                "Select * from tUsers " +
+                " where email = N'" + email + "'";
+
+            bool isExists = MyAdoHelper.IsExist(sqlselect);
+
+            if (isExists)
+                str = "אימייל תפוס";
+            else
+            {
+                //אפשר הרשמה
+                string sqlInsert =
+                    "INSERT INTO tUsers " +
+                    "VALUES (" +
+                    "N'" + firstname + "'," +
+                    "N'" + surname + "'," +
+                    "N'" + middleName + "'," +
+                    "N'" + drinkWhiskey + "'," +
+                    age + "," +                                // INT
+                    "N'" + favBeer + "'," +
+                    "N'" + eatBacon + "'," +
+                    "N'" + email + "'," +
+                    "N'" + password + "'" +
+                    ")";
+
+                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+
+                //str = "OK";
+                Response.Redirect("home.aspx");
+            }
+
+        }
     }
 }
