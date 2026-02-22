@@ -24,10 +24,7 @@
 <style>
 
     .page{
-        background-image: url('<%= ResolveUrl("~/images/background.jpg") %>');
-        background-size: cover;
-        background-position: center; 
-        background-repeat: no-repeat;
+        
         display: flex;
         justify-content: center;
         width: 100%;
