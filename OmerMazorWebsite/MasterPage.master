@@ -26,6 +26,9 @@
                 <div class="register-button">
                     <a href="register.aspx">Register</a>
                 </div>
+                <asp:Panel ID="pnlManager" runat="server" CssClass="manager-button" Visible="false">
+                    <a href="manager.aspx">Database</a>
+                </asp:Panel>
             </td>
         </tr>
         <tr>
@@ -89,6 +92,13 @@
         border-radius: 20px;
     }
     .register-button{
+        background-image: url("images/button.png");
+        background-size: cover;
+        width: 15%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .manager-button{
         background-image: url("images/button.png");
         background-size: cover;
         width: 15%;
