@@ -23,7 +23,7 @@
     <!-- End of form -->
     <input class="submit" id="Submit" type="submit" value="Send" />
 </form>  
-        <%=strResult%>
+       
 </div>
 
 <!-- CSS -->

@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 public partial class Login : System.Web.UI.Page
 {
     public string strResult;
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if(IsPostBack){
+    protected void Page_Load(object sender, EventArgs e){
+
+		if (IsPostBack){
 			// Get the email and password from the form
 			string email = Request.Form["email"] ?? "";
             string password = Request.Form["pass"] ?? "";

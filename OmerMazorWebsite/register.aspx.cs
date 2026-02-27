@@ -12,8 +12,8 @@ public partial class register : System.Web.UI.Page {
     public string str = "";
 
     protected void Page_Load(object sender, EventArgs e){
-        if (IsPostBack)
-        {
+
+		if (IsPostBack){
             string firstname = Request.Form["firstname"];
             string surname = Request.Form["surname"];
             string middleName = Request.Form["midname"];
