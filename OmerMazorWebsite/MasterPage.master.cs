@@ -16,20 +16,20 @@ public partial class MasterPage : System.Web.UI.MasterPage {
 		}
 		pnlManager.Visible = isManager;
 
-		if(Session["email"] != null){
+		// User controls
+		// If the variable "email" is not null then that means a user is connected, so it shows only the button to sign-out
+		if (Session["email"] != null){
 			pnlLogin.Visible = false;
 			pnlRegister.Visible = false;
-		}else{
+			pnlSignOut.Visible = true;
+		}
+		// Else, that means no user is connected, so it shows the buttons to login and register and hides the button to sign-out
+		else{
 			pnlLogin.Visible = true;
 			pnlRegister.Visible = true;
+			pnlSignOut.Visible = false;
 		}
 
 	}
 
-	protected void signOutAction(object sender, EventArgs e){
-		// Sign out immediately upon logout
-		Session["isManager"] = false; 
-		Session["email"] = null;
-		Response.Redirect("home.aspx");
-	}
 }

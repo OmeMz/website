@@ -14,7 +14,6 @@
             <th>
                 <h1>Coolest Website Ever</h1>
             </th>
-            <button><a >Sign-Out</a></button>
             
         </tr>
         <tr class="menu-selection" style="height:20%">
@@ -30,6 +29,9 @@
                 </asp:Panel>
                 <asp:Panel ID="pnlManager" runat="server" CssClass="manager-button" Visible="false">
                     <a href="manager.aspx">Database</a>
+                </asp:Panel>
+                <asp:Panel ID="pnlSignOut" runat="server" CssClass="signout-button" Visible="false">
+                    <a href="Logout.aspx">Sign-Out</a>
                 </asp:Panel>
             </td>
         </tr>
@@ -49,9 +51,9 @@
         color: white;
     }
     .title button{
-        background-color: transparent;
-        border: none;
-        color: white;
+        background-color: white;
+        border: solid;
+        color: black;
         font-size: 16px;
         font-weight: bold;
         cursor: pointer;
@@ -109,6 +111,13 @@
         border-radius: 20px;
     }
     .manager-button{
+        background-image: url("images/button.png");
+        background-size: cover;
+        width: 15%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .signout-button {
         background-image: url("images/button.png");
         background-size: cover;
         width: 15%;
