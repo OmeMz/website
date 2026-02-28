@@ -21,6 +21,9 @@
                 <div class="order-button">
                     <a href="orders.aspx">Order</a>
                 </div>
+                <div class="gallery-button">
+                    <a href="Gallery.aspx">Gallery</a>
+                </div>
                 <asp:Panel ID="pnlLogin" runat="server" CssClass="login-button" Visible="false">
                     <a href="login.aspx">Login</a>
                  </asp:Panel>
@@ -90,6 +93,13 @@
    
     /*Buttons*/
     .order-button{
+        background-image: url("images/button.png");
+        background-size: cover;
+        width: 15%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .gallery-button{
         background-image: url("images/button.png");
         background-size: cover;
         width: 15%;
