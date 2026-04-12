@@ -12,6 +12,18 @@ public partial class home : System.Web.UI.Page
         if(Session["isManager"] == null)
 		    Session["isManager"] = false;
         
+
+        // If user is logged in, show greeting using username (fallback to email)
+        if (Session["email"] != null)
+        {
+            string name = Session["username"] as string;
+            if (string.IsNullOrEmpty(name))
+                name = Session["email"].ToString();
+
+            // HTML-encode to avoid XSS
+            lblGreeting.Text = "Hello " + HttpUtility.HtmlEncode(name);
+        }
+
         // Sign out immediately upon load
         //Session["isManager"] = false; Session["email"] = null;
 	}

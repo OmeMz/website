@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Configuration;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -17,27 +18,31 @@ public partial class Login : System.Web.UI.Page
             string password = Request.Form["pass"] ?? "";
 
 			// Check if the email and password are for the manager
-			if (email.Equals("manager@gmail.com") && password.Equals("111")){
+			if (email == "manager@gmail.com" && password == "111") {
                 Session["email"] = email;
+                Session["username"] = "Manager";
                 Session["isManager"] = true;
-				ClientScript.RegisterStartupScript(this.GetType(), "openManagerAndGoHome", "window.open('manager.aspx','_blank'); window.location='ehehehe.aspx';", true); return;
-            // If not, check if the email and password are for a regular user
-            }else{
-                string sqlselect =
-                    "Select * from tUsers " +
-                    " where email = N'" + email + "' and " +
-                    "password = N'" + password + "'";
 
-                bool isExists = MyAdoHelper.IsExist(sqlselect);
+                ClientScript.RegisterStartupScript(this.GetType(), "openManagerAndGoHome", "window.open('manager.aspx','_blank'); window.location='ehehehe.aspx';", true); return;
+            } else {
+                string sql = "SELECT firstName FROM tUsers WHERE email = @email AND password = @pass";
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["YourConnName"].ConnectionString)) {
+                    using (var cmd = new SqlCommand(sql, conn)) {
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@pass", password);
+                        conn.Open();
+                        var result = cmd.ExecuteScalar();
+                        if (result != null) {
+                            Session["email"] = email;
+                            Session["username"] = result.ToString();
+                            Session["isManager"] = false;
 
-				// If the email and password are correct, set the session variables and redirect to the home page
-				if (isExists){
-                    Session["email"] = email;
-                    Session["isManager"] = false;
-                    Response.Redirect("home.aspx");
-				}else{
-                    strResult = "Wrong email or password!"; 
-				}
+                            Response.Redirect("home.aspx");
+                        } else {
+                            strResult = "Wrong email or password!";
+                        }
+                    }
+                }
             }
         }
     }
