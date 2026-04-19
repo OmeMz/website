@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -23,27 +24,25 @@ public partial class Login : System.Web.UI.Page
                 Session["username"] = "Manager";
                 Session["isManager"] = true;
 
-                ClientScript.RegisterStartupScript(this.GetType(), "openManagerAndGoHome", "window.open('manager.aspx','_blank'); window.location='ehehehe.aspx';", true); return;
+                Response.Redirect("manager.aspx");
             } else {
-                string sql = "SELECT firstName FROM tUsers WHERE email = @email AND password = @pass";
-                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["YourConnName"].ConnectionString)) {
-                    using (var cmd = new SqlCommand(sql, conn)) {
-                        cmd.Parameters.AddWithValue("@email", email);
-                        cmd.Parameters.AddWithValue("@pass", password);
-                        conn.Open();
-                        var result = cmd.ExecuteScalar();
-                        if (result != null) {
+                string sql = "SELECT firstName FROM tUsers WHERE email = N'" + email + 
+                    "' AND password = N'" + password + "'";
+
+                DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
+     
+                        if (dt.Rows.Count != 0) {
                             Session["email"] = email;
-                            Session["username"] = result.ToString();
+                            Session["username"] = dt.Rows[0]["firstName"];
                             Session["isManager"] = false;
 
                             Response.Redirect("home.aspx");
                         } else {
-                            strResult = "Wrong email or password!";
+                    Session["username"] = "אורח";
+                    strResult = "Wrong email or password!";
                         }
                     }
                 }
             }
-        }
-    }
 }
+

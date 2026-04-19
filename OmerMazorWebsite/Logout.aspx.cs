@@ -10,6 +10,7 @@ public partial class Logout : System.Web.UI.Page
 	protected void Page_Load(object sender, EventArgs e){
 		Session["email"] = null;
 		Session["isManager"] = null;
-		Response.Redirect("home.aspx");
+        Session["username"] = "guest";
+        Response.Redirect("home.aspx");
 	}
 }
