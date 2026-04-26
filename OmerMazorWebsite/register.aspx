@@ -5,10 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
-<form name="example" method="post" runat="server">
+<form name="example" method="post" onsubmit="return checkForm()" runat="server">
     
     <!-- Register Title -->
     <h1 class="form-title">Register</h1>
+    <h5 class="form-subtitle"><%= str %></h5>
 
     <div class="form-content">
     <!-- Name -->
@@ -60,10 +61,31 @@
 </form>  
 </div>
 
-<%-- Results --%>
-<div class="results">
-    <%= str %>
-</div>
+<!-- Javascript -->
+<script>
+
+    function checkForm() {
+        var form = document.forms["example"];
+        var age = form["age"].value;
+        var email = form["email"].value;
+        var pass = form["pass"].value;
+
+        if (age == "0") {
+            alert("Please select an age group.");
+            return false;
+        }
+        if(!email){
+            alert("Please enter your email.");
+            return false;
+        }
+        if(!pass){
+            alert("Please enter your password.");
+            return false;
+        }
+        return true;
+    }
+
+</script>
 
 <!-- CSS -->
 <style>
@@ -74,9 +96,7 @@
         background-repeat: no-repeat;
         display: flex;
         justify-content: center;
-        width: 100%;
-        height: 90vh;
-        align-items: center;
+        width: 100%
         
     }
 
@@ -112,7 +132,12 @@
         margin-top: 0;
 
     }
-
+    
+    .form-subtitle{
+        margin-top: 0;
+        color: #ffcc00;
+    }
+    
     .submit{
         margin-top: auto;
         margin-top: 5%;

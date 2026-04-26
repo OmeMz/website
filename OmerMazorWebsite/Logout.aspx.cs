@@ -8,8 +8,7 @@ using System.Web.UI.WebControls;
 public partial class Logout : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e){
-		Session["email"] = null;
-		Session["isManager"] = null;
+		Session.Abandon();
         Session["username"] = "guest";
         Response.Redirect("home.aspx");
 	}
