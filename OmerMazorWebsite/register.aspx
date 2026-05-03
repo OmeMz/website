@@ -2,21 +2,46 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 
+<script language="javascript">
+
+    function checkAll() {
+        fnErr.innerHTML = 0;
+
+        f = true;
+        f = f && checkFirstName();
+
+        return f;
+    }
+
+    function checkFirstName() {
+        name = document.getElementById("fn").value;
+
+        if (name.length < 2 || name.length > 30) {
+            fnErr.innerHTML = "Name must be between 2 to 30 characters long";
+            return false;
+        }
+
+        return true;
+
+    }
+
+</script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
-<form name="example" method="post" onsubmit="return checkForm()" runat="server">
+<form name="example" method="post" onsubmit="return checkAll()" runat="server">
     
     <!-- Register Title -->
     <h1 class="form-title">Register</h1>
-    <h5 class="form-subtitle"><%= str %></h5>
+    <h5 class="form-subtitle"><%= str %>.</h5>
 
     <div class="form-content">
     <!-- Name -->
     <div class="name">
-    First name: <input type="text" name="firstname"><br />
-    Surname: <input type="text" name="surname"><br />
-    Middle name (Optional): <input type="text" name="midname"><br />
+    First name: <input type="text" name="firstname" id="fn"><br />
+    Surname: <input type="text" name="surname" id="sn"><br />
+    Middle name (Optional): <input type="text" name="midname" id="mn"><br />
     </div>
 
     <!-- Email and pass -->
@@ -60,32 +85,6 @@
     <input class="submit" id="Submit" type="submit" value="Send" />
 </form>  
 </div>
-
-<!-- Javascript -->
-<script>
-
-    function checkForm() {
-        var form = document.forms["example"];
-        var age = form["age"].value;
-        var email = form["email"].value;
-        var pass = form["pass"].value;
-
-        if (age == "0") {
-            alert("Please select an age group.");
-            return false;
-        }
-        if(!email){
-            alert("Please enter your email.");
-            return false;
-        }
-        if(!pass){
-            alert("Please enter your password.");
-            return false;
-        }
-        return true;
-    }
-
-</script>
 
 <!-- CSS -->
 <style>

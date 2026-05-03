@@ -62,7 +62,7 @@ public partial class register : System.Web.UI.Page {
                 MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
 
                 //str = "OK";
-                Response.Redirect("home.aspx");
+                //Response.Redirect("home.aspx");
             }
 
         }
