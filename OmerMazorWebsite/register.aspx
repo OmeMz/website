@@ -4,9 +4,7 @@
 
 <script language="javascript">
 
-    function checkAll() {
-        fnErr.innerHTML = 0;
-
+    function checkAll(){
         f = true;
         f = f && checkFirstName();
 
@@ -15,9 +13,10 @@
 
     function checkFirstName() {
         name = document.getElementById("fn").value;
+        subtitle = document.getElementById("form-subtitle").value;
 
-        if (name.length < 2 || name.length > 30) {
-            fnErr.innerHTML = "Name must be between 2 to 30 characters long";
+        if (name.length < 2 || name.length > 30){
+            subtitle.innerHTML = "First name must be between 2 and 30 characters.";
             return false;
         }
 
@@ -30,11 +29,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="page">
-<form name="example" method="post" onsubmit="return checkAll()" runat="server">
+<form name="example" method="post" onsubmit="return checkAll();" runat="server">
     
     <!-- Register Title -->
     <h1 class="form-title">Register</h1>
-    <h5 class="form-subtitle"><%= str %>.</h5>
+    <h5 class="form-subtitle" id="form-subtitle"></h5>
 
     <div class="form-content">
     <!-- Name -->
