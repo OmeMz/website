@@ -7,7 +7,10 @@
 
         <table align="center" border="2" style="width: 100%;">
     <tr style="height: 60px">
-        <th align="center" colspan="2"><h1>Menu</h1></th>
+        <th align="center" colspan="2">
+            <h1>Menu</h1> <div class="menu-subtitle"><h5>Press any item to add it to your cart</h5></div>
+        </th>
+
     </tr>
 
     <tr style="height: 80px">
@@ -23,5 +26,12 @@
         <td align="center"><img src="images/steak.png" width="80%" height="30%"/></td>
     </tr>
 </table>
+
+    <style>
+        .menu-subtitle {
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
 </asp:Content>
 

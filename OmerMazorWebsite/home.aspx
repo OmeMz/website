@@ -12,7 +12,7 @@
         </div>
         <div class="about-content">
             <h3>
-                Wassup my niggas, this is a website for a made-up restaurant for a school-project
+                This website is for a made-up restaurant for a school project.
             </h3>
         </div>
     </div>

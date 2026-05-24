@@ -19,9 +19,9 @@
         </tr>
         <tr class="menu-selection" style="height:20%">
             <td align="center">
-                <div class="order-button">
+                <asp:Panel ID="pnlOrder" runat="server" CssClass="order-button" Visible="false">
                     <a href="orders.aspx">Order</a>
-                </div>
+                </asp:Panel>
                 <div class="gallery-button">
                     <a href="Gallery.aspx">Gallery</a>
                 </div>

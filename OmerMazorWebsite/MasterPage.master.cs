@@ -22,12 +22,14 @@ public partial class MasterPage : System.Web.UI.MasterPage {
 			pnlLogin.Visible = false;
 			pnlRegister.Visible = false;
 			pnlSignOut.Visible = true;
+			pnlOrder.Visible = true;
 		}
 		// Else, that means no user is connected, so it shows the buttons to login and register and hides the button to sign-out
 		else{
 			pnlLogin.Visible = true;
 			pnlRegister.Visible = true;
 			pnlSignOut.Visible = false;
+			pnlOrder.Visible = false;
 		}
 
 	}

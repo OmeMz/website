@@ -18,7 +18,7 @@ public partial class manager : System.Web.UI.Page{
             string name = Request.Form["name"];
 
 			// This is the SQL query that will be executed, it searches for users whose first name, surname or email contains the input name
-			string sql = "SELECT * FROM tUsers WHERE firstname LIKE N'%" + name + "%' OR surname LIKE N'%" + name + "%' OR email LIKE N'%" + name + "%'";
+			string sql = "SELECT * FROM tUsers WHERE firstname LIKE N'%" + name + "%' OR surname LIKE N'%" + name + "%' ";
 
 			DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
 

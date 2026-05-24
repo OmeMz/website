@@ -6,17 +6,21 @@
 
     function checkAll(){
         f = true;
-        f = f && checkFirstName();
+        f = f && checkName();
 
         return f;
     }
 
-    function checkFirstName() {
+    function checkName(){
         name = document.getElementById("fn").value;
+        surname = document.getElementById("sn").value;
         subtitle = document.getElementById("form-subtitle").value;
 
         if (name.length < 2 || name.length > 30){
             subtitle.innerHTML = "First name must be between 2 and 30 characters.";
+            return false;
+        }else if(surname.length < 2 || surname.length > 30){
+            subtitle.innerHTML = "Surname must be between 2 and 30 characters.";
             return false;
         }
 
