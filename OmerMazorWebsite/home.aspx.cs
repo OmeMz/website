@@ -20,8 +20,6 @@ public partial class home : System.Web.UI.Page
             if (string.IsNullOrEmpty(name))
                 name = Session["email"].ToString();
 
-            // HTML-encode to avoid XSS
-            lblGreeting.Text = "Hello " + HttpUtility.HtmlEncode(name);
         }
 
         // Sign out immediately upon load

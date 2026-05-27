@@ -23,6 +23,7 @@ public partial class MasterPage : System.Web.UI.MasterPage {
 			pnlRegister.Visible = false;
 			pnlSignOut.Visible = true;
 			pnlOrder.Visible = true;
+			pnlCart.Visible = true;
 		}
 		// Else, that means no user is connected, so it shows the buttons to login and register and hides the button to sign-out
 		else{
@@ -30,6 +31,7 @@ public partial class MasterPage : System.Web.UI.MasterPage {
 			pnlRegister.Visible = true;
 			pnlSignOut.Visible = false;
 			pnlOrder.Visible = false;
+			pnlCart.Visible = false;
 		}
 
 	}

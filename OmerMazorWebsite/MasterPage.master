@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body style="background-color: lightblue">
-    שלום <%=Session["username"]%>
+    Hello, <%=Session["username"]%>
     <table align="center" border="2" style="width: 100%;">
         <tr class="title" style="height:10%">
             <th>
@@ -19,6 +19,9 @@
         </tr>
         <tr class="menu-selection" style="height:20%">
             <td align="center">
+                <asp:Panel ID="pnlCart" runat="server" CssClass="cart-button" Visible="false">
+                    <a href="Cart.aspx">My Cart</a>
+                </asp:Panel>
                 <asp:Panel ID="pnlOrder" runat="server" CssClass="order-button" Visible="false">
                     <a href="orders.aspx">Order</a>
                 </asp:Panel>
@@ -129,6 +132,14 @@
         border-radius: 20px;
     }
     .signout-button {
+        background-image: url("images/button.png");
+        background-size: cover;
+        width: 15%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .cart-button {
         background-image: url("images/button.png");
         background-size: cover;
         width: 15%;
