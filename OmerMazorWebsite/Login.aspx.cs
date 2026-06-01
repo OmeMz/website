@@ -38,8 +38,8 @@ public partial class Login : System.Web.UI.Page
 
                             Response.Redirect("home.aspx");
                         } else {
-                    Session["username"] = "אורח";
-                    strResult = "Wrong email or password!";
+                            Session["username"] = "אורח";
+                            strResult = "Wrong email or password!";
                         }
                     }
                 }

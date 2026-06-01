@@ -12,7 +12,8 @@
         </div>
         <div class="about-content">
             <h3>
-                This website is for a made-up restaurant for a school project.
+                בונה האתר: עומר מזור, תלמיד בתיכון כצנלסון במגמת הנת"כ, נמצא ב5 יח"ל במתמטיקה ואנגלית
+                
             </h3>
         </div>
     </div>
