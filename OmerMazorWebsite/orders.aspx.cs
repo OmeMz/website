@@ -16,8 +16,7 @@ public partial class orders : System.Web.UI.Page
             string email = Session["email"].ToString();
             string chosenProduct = Request.Form["products"];
 
-            if (chosenProduct != null && chosenProduct != "0")
-            {
+            if (chosenProduct != null && chosenProduct != "0"){
                 string sqlUpdate =
                     "UPDATE tItems SET " + chosenProduct + " = " + chosenProduct + " + 1 " +
                     "WHERE userEmail = N'" + email + "'";

@@ -92,7 +92,7 @@
 <!-- CSS -->
 <style>
     .page{
-        background-image: url('<%= ResolveUrl("~/images/background.jpg") %>');
+        background-image: url('images/background.jpg');
         background-size: cover;
         background-position: center; 
         background-repeat: no-repeat;

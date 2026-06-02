@@ -52,7 +52,7 @@ public partial class register : System.Web.UI.Page {
                     "N'" + surname + "'," +
                     "N'" + middleName + "'," +
                     "N'" + drinkWhiskey + "'," +
-                    age + "," +                                // INT
+                    age + "," +                              
                     "N'" + favBeers + "'," +
                     "N'" + eatBacon + "'," +
                     "N'" + email + "'," +
@@ -64,7 +64,7 @@ public partial class register : System.Web.UI.Page {
                     "VALUES (" +
                     "N'" + email + "'," +
                     0 + "," +
-                    0 + "," +                              // INT
+                    0 + "," +                            
                     0 + "," +
                     0 +
                     ")";

@@ -40,7 +40,7 @@
     </div> 
 </form>
     <style>
-        .page{
+        .page{  
             display: flex;
             flex-direction: column;
             align-content: center;

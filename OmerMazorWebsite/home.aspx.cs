@@ -19,6 +19,9 @@ public partial class home : System.Web.UI.Page
             if (string.IsNullOrEmpty(name))
                 name = Session["email"].ToString();
 
+        }else{
+            Session["username"] = "אורח";
+            Session["userRole"] = "guest";
         }
        
         // Sign out immediately upon load

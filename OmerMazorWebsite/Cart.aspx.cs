@@ -16,7 +16,7 @@ public partial class Cart : System.Web.UI.Page {
         if(Session["userRole"] != null){
             if(Session["userRole"].ToString() == "signedUser"){
                 sql = "SELECT * FROM tItems WHERE userEmail LIKE '%" + email + "%'";
-            }else{
+            }else if(Session["userRole"].ToString() == "Manager"){
                 sql = "SELECT * FROM tItems";
             }
         }

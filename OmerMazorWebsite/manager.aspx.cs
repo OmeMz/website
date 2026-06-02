@@ -22,6 +22,10 @@ public partial class manager : System.Web.UI.Page{
             string like = Request.Form["like"] ?? "";
             string sql = "";
 
+            if(!string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(nameemail) || !string.IsNullOrWhiteSpace(name) && !string.IsNullOrWhiteSpace(like) || !string.IsNullOrWhiteSpace(like) && !string.IsNullOrWhiteSpace(nameemail)){
+                return;
+            }            
+
             if(!string.IsNullOrWhiteSpace(name)){
                 sql = "SELECT * FROM tUsers WHERE firstName = N'" + name + "' OR surname = N'" + name + "'";
             }
