@@ -55,19 +55,19 @@
     </div>
 
     <!-- Preferences -->
-    <h2>Fav Beer?</h2>
-    <input type="radio" id="PA" name="fav_beer" value="Pale Ale">
+    <h2>Fav Beers?</h2>
+    <input type="checkbox" id="PA" name="fav_beer1" value="Pale Ale">
     <label for="PA">Pale Ale</label>
-    <input type="radio" id="RB" name="fav_beer" value="Rootbeer"> 
+    <input type="checkbox" id="RB" name="fav_beer2" value="Rootbeer"> 
     <label for="RB">Root Beer</label>
-    <input type="radio" id="WB" name="fav_beer" value="Wheat Beer">
+    <input type="checkbox" id="WB" name="fav_beer3" value="Wheat Beer">
     <label for="WB">Wheat Beer</label>
 
     <h2>Do you drink Whiskey?</h2>
-    <input type="radio" id="whiskeyYes1" name="drinkWhiskey" value="Yes" />
-    <label for="whiskeyYes1">Yes</label>
-    <input type="radio" id="whiskeyYes2" name="drinkWhiskey" value="Yes" />
-    <label for="whiskeyYes2">Yes</label><br />
+    <input type="radio" id="whiskeyYes" name="drinkWhiskey" value="Yes" />
+    <label for="whiskeyYes">Yes</label>
+    <input type="radio" id="whiskeyNo" name="drinkWhiskey" value="No" />
+    <label for="whiskeyNo">No</label><br />
     
     <h2>Do you eat bacon?</h2>
     <input type="radio" id="baconYes" name="eatBacon" value="Yes" />

@@ -14,15 +14,15 @@ public partial class home : System.Web.UI.Page
         
 
         // If user is logged in, show greeting using username (fallback to email)
-        if (Session["email"] != null)
-        {
+        if (Session["email"] != null){
             string name = Session["username"] as string;
             if (string.IsNullOrEmpty(name))
                 name = Session["email"].ToString();
 
         }
-
+       
         // Sign out immediately upon load
+        // עשיתי את זה בהתחלה כדי למצוא בעיות
         //Session["isManager"] = false; Session["email"] = null;
 	}
 }

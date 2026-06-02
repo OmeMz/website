@@ -11,6 +11,10 @@
         <div class="gallery-images">
             <img src="images/beer.jpg"/>
             <img src="images/whiskeyy.jpg"/>
+            <img src="images/fihh.jpg"/>
+            <img src="images/anotherjuicyfish.jpg"/>
+            <img src="images/morewhiskey.jpg"/>
+            <img src="images/juicysteak.jpg"/>
         </div>
     </div>
 </div>
@@ -31,8 +35,10 @@
     }
 
     .gallery {
-        display: flow;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 20px;
         background-color: rgba(255, 255, 255, 0.5);
         padding-bottom: 5%;

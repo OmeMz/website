@@ -19,7 +19,7 @@ public partial class register : System.Web.UI.Page {
             string middleName = Request.Form["midname"];
             string drinkWhiskey = Request.Form["drinkWhiskey"];
             string age = Request.Form["age"];
-            string favBeer = Request.Form["fav_beer"];
+            string favBeers = Request.Form["fav_beer1"] + "," + Request.Form["fav_beer2"] + "," + Request.Form["fav_beer3"];
             string eatBacon = Request.Form["eatBacon"];
             string email = Request.Form["email"];
             string password = Request.Form["pass"];
@@ -45,7 +45,7 @@ public partial class register : System.Web.UI.Page {
             else
             {
                 //אפשר הרשמה
-                string sqlInsert =
+                string sqlInsertUser =
                     "INSERT INTO tUsers " +
                     "VALUES (" +
                     "N'" + firstname + "'," +
@@ -53,16 +53,27 @@ public partial class register : System.Web.UI.Page {
                     "N'" + middleName + "'," +
                     "N'" + drinkWhiskey + "'," +
                     age + "," +                                // INT
-                    "N'" + favBeer + "'," +
+                    "N'" + favBeers + "'," +
                     "N'" + eatBacon + "'," +
                     "N'" + email + "'," +
                     "N'" + password + "'" +
                     ")";
 
-                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
+                string sqlInsertItem =
+                    "INSERT INTO tItems " +
+                    "VALUES (" +
+                    "N'" + email + "'," +
+                    0 + "," +
+                    0 + "," +                              // INT
+                    0 + "," +
+                    0 +
+                    ")";
+
+                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsertUser);
+                MyAdoHelper.DoQuery("MyDB.mdf", sqlInsertItem);
 
                 //str = "OK";
-                //Response.Redirect("home.aspx");
+                Response.Redirect("Login.aspx");
             }
 
         }

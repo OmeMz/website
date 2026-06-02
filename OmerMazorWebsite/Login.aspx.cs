@@ -23,6 +23,7 @@ public partial class Login : System.Web.UI.Page
                 Session["email"] = email;
                 Session["username"] = "Manager";
                 Session["isManager"] = true;
+                Session["userRole"] = "Manager";
 
                 Response.Redirect("manager.aspx");
             } else {
@@ -34,11 +35,13 @@ public partial class Login : System.Web.UI.Page
                         if (dt.Rows.Count != 0) {
                             Session["email"] = email;
                             Session["username"] = dt.Rows[0]["firstName"];
+                            Session["userRole"] = "signedUser";
                             Session["isManager"] = false;
 
                             Response.Redirect("home.aspx");
                         } else {
                             Session["username"] = "אורח";
+                            Session["userRole"] = "guest";
                             strResult = "Wrong email or password!";
                         }
                     }

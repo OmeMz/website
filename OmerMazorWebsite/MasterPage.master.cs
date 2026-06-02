@@ -18,7 +18,7 @@ public partial class MasterPage : System.Web.UI.MasterPage {
 
 		// User controls
 		// If the variable "email" is not null then that means a user is connected, so it shows only the button to sign-out
-		if (Session["email"] != null){
+		if (Session["userRole"] != null && Session["userRole"].ToString() != "guest"){
 			pnlLogin.Visible = false;
 			pnlRegister.Visible = false;
 			pnlSignOut.Visible = true;

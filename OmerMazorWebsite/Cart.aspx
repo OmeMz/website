@@ -11,7 +11,7 @@
                 <asp:TextBox ID="SearchTextBox" runat="server" CssClass="search-bar"></asp:TextBox>
                 <input class="search-button" type="submit" value="Search" />
             </div>
-        </div
+        </div>
 </form>
 
 

@@ -26,10 +26,9 @@ public partial class manager : System.Web.UI.Page{
                 st = "No data found";
             }else{
 
-            // build list of columns to show (skip password)
+            // build list of columns to show
             var showCols = new List<System.Data.DataColumn>();
             foreach (System.Data.DataColumn col in dt.Columns) {
-                if (!string.Equals(col.ColumnName, "password", StringComparison.OrdinalIgnoreCase))
                     showCols.Add(col);
             }
 
