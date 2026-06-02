@@ -15,12 +15,26 @@ public partial class manager : System.Web.UI.Page{
 		if (Session["isManager"] == null || !Convert.ToBoolean(Session["isManager"])) { Response.Redirect("Login.aspx"); return; }
 
         if(IsPostBack){
-            string name = Request.Form["name"];
+            int selectedField = 0;
 
-			// This is the SQL query that will be executed, it searches for users whose first name, surname or email contains the input name
-			string sql = "SELECT * FROM tUsers WHERE firstname LIKE N'%" + name + "%' OR surname LIKE N'%" + name + "%' ";
+            string name = Request.Form["name"] ?? "";
+            string nameemail = Request.Form["nameemail"] ?? "";
+            string like = Request.Form["like"] ?? "";
+            string sql = "";
 
-			DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
+            if(!string.IsNullOrWhiteSpace(name)){
+                sql = "SELECT * FROM tUsers WHERE firstName = N'" + name + "' OR surname = N'" + name + "'";
+            }
+            else if(!string.IsNullOrWhiteSpace(nameemail)){
+                sql = "SELECT * FROM tUsers WHERE firstName = N'" + nameemail + "' OR surname = N'" + nameemail + "' OR email = N'" + nameemail + "'";
+
+            }
+            else if(!string.IsNullOrWhiteSpace(like)){
+                sql = "SELECT * FROM tUsers WHERE firstName LIKE N'%" + like + "%' OR surname LIKE N'%" + like + "%'";
+
+            }
+
+            DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
 
 			if (dt.Rows.Count == 0){
                 st = "No data found";

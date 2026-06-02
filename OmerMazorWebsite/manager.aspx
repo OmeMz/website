@@ -6,9 +6,18 @@
     <div class="page">
         <form class="manager-box" runat="server">
             <h1>Search Users</h1>
+            <h5>Fill out only one of the fields</h5>
             <div class="row">
                 <label>Name: </label>
                 <input type="text" name="name" /><br />
+            </div>
+            <div class="row">
+                <label>Name or Email: </label>
+                <input type="text" name="nameemail" /><br />
+            </div>
+            <div class="row">
+                <label>Anything: </label>
+                <input type="text" name="like" /><br />
             </div>
 
 
@@ -22,12 +31,15 @@
 <style>
 
     .page{
-        
         display: flex;
         justify-content: center;
         width: 100%;
         height: 90vh;
         align-items: center;
+    }
+
+    .page h5{
+        color: yellow;
     }
 
     .manager-box{
