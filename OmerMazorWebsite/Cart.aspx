@@ -6,10 +6,8 @@
 <form class="page" runat="server">
         <div class="cart-content">
             <h1>Shopping Cart</h1>
-            <h5>Use the search bar below to find products</h5>
             <div class="search-container">
-                <asp:TextBox ID="SearchTextBox" runat="server" CssClass="search-bar"></asp:TextBox>
-                <input class="search-button" type="submit" value="Search" />
+                <%=str%>
             </div>
         </div>
 </form>
@@ -19,6 +17,7 @@
 
         body {
             margin: 0;
+            color: white;
         }
 
         .page {
@@ -39,14 +38,6 @@
             width: 30%;
             padding-bottom: 5%;
             border-radius: 20px;
-        }
-
-        .cart-content h1{
-            color: white;
-        }
-        
-        .cart-content h5{
-            color: yellow;
         }
 
         .search-container {
