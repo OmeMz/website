@@ -14,7 +14,7 @@
     function checkName(){
         name = document.getElementById("fn").value;
         surname = document.getElementById("sn").value;
-        subtitle = document.getElementById("form-subtitle").value;
+        subtitle = document.getElementById("form-subtitle");
 
         if (name.length < 2 || name.length > 30){
             subtitle.innerHTML = "First name must be between 2 and 30 characters.";
