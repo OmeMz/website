@@ -24,15 +24,6 @@ public partial class register : System.Web.UI.Page {
             string email = Request.Form["email"];
             string password = Request.Form["pass"];
 
-            // מוודא שהכל מלא
-            if(string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)){
-                str = "Email or Password are empty";
-                return;
-            }
-            if (age == "0"){
-                str = "Please select an age group.";
-                return; 
-            }
             //האם מייל תפוס?
             string sqlselect =
                 "Select * from tUsers " +

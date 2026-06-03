@@ -14,6 +14,16 @@
     function checkName(){
         name = document.getElementById("fn").value;
         surname = document.getElementById("sn").value;
+        email = document.getElementById("email").value;
+        pass = document.getElementById("pass").value;
+        paleAle = document.getElementById("PA").checked;
+        rootBeer = document.getElementById("RB").checked;
+        wheatBeer = document.getElementById("WB").checked;
+        baconYes = document.getElementById("baconYes").checked;
+        baconNo = document.getElementById("baconNo").checked;
+        whiskeyYes = document.getElementById("whiskeyYes").checked;
+        whiskeyNo = document.getElementById("whiskeyNo").checked;
+        age = document.getElementById("age").value;
         subtitle = document.getElementById("form-subtitle");
 
         if (name.length < 2 || name.length > 30){
@@ -21,6 +31,33 @@
             return false;
         }else if(surname.length < 2 || surname.length > 30){
             subtitle.innerHTML = "Surname must be between 2 and 30 characters.";
+            return false;
+        }
+        if (email.length < 2 || email.length > 30) {
+            subtitle.innerHTML = "Email must be between 2 and 30 characters.";
+            return false;
+        } else if (pass.length < 2 || pass.length > 30) {
+            subtitle.innerHTML = "Password must be between 2 and 30 characters.";
+            return false;
+        }
+
+        if (!paleAle && !rootBeer && !wheatBeer) {
+            subtitle.innerHTML = "You must select at-least one beer"
+            return false;
+        }
+
+        if (!whiskeyYes && !whiskeyNo) {
+            subtitle.innerHTML = "You must select if you drink whiskey"
+            return false;
+        }
+
+        if (!baconYes && !baconNo) {
+            subtitle.innerHTML = "You must select if you eat bacon"
+            return false;
+        }
+
+        if (age != 16 && age != 18 && age != 25) {
+            subtitle.innerHTML = "You must select an age group"
             return false;
         }
 
@@ -50,8 +87,8 @@
     <!-- Email and pass -->
      <h2>Enter E-Mail and create a password</h2>
     <div class="login-info">
-    Email: <input type="text" name="email" /><br />
-    Password: <input type="password" name="pass" /><br />
+    Email: <input type="text" name="email" id="email"/><br />
+    Password: <input type="password" name="pass" id="pass"/><br />
     </div>
 
     <!-- Preferences -->
