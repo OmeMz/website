@@ -25,7 +25,7 @@ public partial class Login : System.Web.UI.Page
                 Session["isManager"] = true;
                 Session["userRole"] = "Manager";
 
-                Response.Redirect("manager.aspx");
+                Response.Redirect("home.aspx");
             } else {
                 string sql = "SELECT firstName FROM tUsers WHERE email = N'" + email + 
                     "' AND password = N'" + password + "'";
